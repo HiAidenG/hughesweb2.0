@@ -1,5 +1,6 @@
 import { NextUIProvider } from '@nextui-org/react';
 import theme from './theme';
+import React from 'react';
 
 
 function MyApp({ Component, pageProps }) {
@@ -7,6 +8,7 @@ function MyApp({ Component, pageProps }) {
     <NextUIProvider theme={theme}>
       <Component {...pageProps} />
     </NextUIProvider>
+
   );
 }
 

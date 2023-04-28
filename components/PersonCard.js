@@ -1,7 +1,7 @@
-import { Card, Row, Text } from "@nextui-org/react";
+import { Card, Row, Text, Col } from "@nextui-org/react";
 import { Modal, useModal, Button } from "@nextui-org/react";
 
-export function PersonCard({ Name, Img, Bio, width = 400, height = 370 }) {
+export function PersonCard({ Name, Img, Bio, width = 400, height = 370, Role }) {
   const { setVisible, bindings } = useModal();
   return (
     <div>
@@ -17,11 +17,18 @@ export function PersonCard({ Name, Img, Bio, width = 400, height = 370 }) {
           />
         </Card.Body>
         <Card.Footer css={{ justifyItems: "flex-start" }}>
+          <Col>
           <Row wrap="wrap" justify="space-between" align="center">
             <Text h4 css={{ m: 2}}>
               {Name}
             </Text>
           </Row>
+          <Row>
+            <Text small css={{ m: 2 }}>
+              {Role}
+            </Text>
+          </Row>
+          </Col>
         </Card.Footer>
       </Card>
       <Modal

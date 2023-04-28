@@ -1,0 +1,18 @@
+/* responsiveText.module.css */
+
+.text-responsive {
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .text-responsive {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .text-responsive {
+      font-size: 12px;
+    }
+  }
+  

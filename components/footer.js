@@ -19,7 +19,7 @@ export const Footer = () => {
           <Text> © Hughes Lab 2023. </Text>
           </Text>
         </Grid>
-        <Grid xs={12} md={3} justifyContent="right" justify="right" style={{ marginLeft: "17.5rem", display: "flex" }}>
+        <Grid xs={12} md={3} justifycontent="right" justify="right" style={{ marginLeft: "17.5rem", display: "flex" }}>
           <Image
             src="../images/University_of_Toronto-Logo.png"
             width={200}

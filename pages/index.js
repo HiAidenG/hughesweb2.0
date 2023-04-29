@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useTheme } from '@nextui-org/react'
 import { Box } from '@/components/Box'
@@ -7,10 +6,7 @@ import { Navbar, Grid, Spacer, Container, Image, Text } from '@nextui-org/react'
 import { Footer } from '@/components/footer'
 import { ResearchOverviewCard } from '@/components/ResearchCard'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
-	const theme = useTheme()
+const Home = () => {
 	return (
 		<Box css={{ maxWidth: '100%', overflow: 'hidden' }}>
 			<Navbar isCompact variant="sticky" height="90px" maxWidth={'fluid'}>
@@ -68,7 +64,7 @@ export default function Home() {
 					</Text>
 
 					<Text
-						italic
+
 						align="center"
 						css={{
 							position: 'relative',
@@ -112,20 +108,34 @@ export default function Home() {
 				<main className={styles.main}>
 					<div className={styles.container}>
 						<div className={styles.column}>
-							<Text h2 css={{
-								color: '#e01f00'
-							}}>Our Lab</Text>
-							<Text p css={{ color: 'black', marginBottom: '2rem' }}>The Hughes Lab is a research group at the University of Toronto, Donnelly Centre. Interpretation of nucleic acid sequence is a fundamental problem in molecular biology.  It is now clear that only a small minority of most genomes is protein coding. In contrast, the number and variety of apparent regulatory sequences continues to grow - in human, eclipsing the number of protein coding genes by orders of magnitude. Decoding how regulatory sequences are recognized and interpreted by cells is fundamental to dissecting gene expression mechanisms, interpreting the significance of sequence variants, and understanding the function and evolution of genomes. Despite a wealth of sequencing and expression data, however, it remains surprisingly difficult to predict gene expression patterns on the basis of primary sequence, even in “simple” genomes such as that of yeast.  This shortcoming suggest that there are large gaps in available data, and/or that our conceptual models of how transcriptional and post-transcriptional regulation work are too simplistic. </Text>
-							<Text h2 css={{ color: '#ffb700' }}>Our Research</Text>
-							<Text p css={{ color: 'black' }}>Projects central to the lab include the following:
-								<Text style={{ fontWeight: 'bold' }}>1. Improving sequence-based models of gene regulation</Text>
-								Basic questions in this arena encompass how regulatory sequences and even gene structures are defined, and how they are activated.  We recently described a computational model that inputs only the sequence preferences of DNA and RNA binding proteins, and accurately predicts known gene structures, as well as expression from randomly-generated sequences (de Boer et al., Genome Research 2014).  The model also predicts and explains the origins of non-genic transcripts, and indicates that definition of genomic elements is intimately tied to control of expression levels - a finding that is likely relevant in other genomes, e.g. human, in which the locations of regulatory elements and transcript isoforms often change between cell types.  Goals of ongoing efforts include predicting transcript levels, modelling post-transcriptional regulatory mechanisms, and extending these models in other organisms.
-								<Spacer y={1} />
-								<Text style={{ fontWeight: 'bold' }}>2. Comprehensive views of protein-DNA and protein-RNA recognition</Text>
-								Eukaryotic genomes encode hundreds to thousands of proteins that contain sequence-specific DNA and RNA binding domains.  These are the basic building blocks of gene regulation programs, and their binding motifs are an essential ingredient in the gene regulation formula.  We are systematically decoding protein-DNA and proten-RNA sequence preferences across the eukaryotes (Weirauch, Yang et al., Cell 2014; Ray, Kazan, Cook, Weirauch, Najafabadi et al., Nature 2013) using a variety of approaches, including new experimental and computational techniques that we develop.
-								<Spacer y={1} />
-								<Text style={{ fontWeight: 'bold' }}>3. Dissecting the evolution of gene regulation mechanisms</Text>
-								Many DNA and RNA binding proteins display deep evolutionary conservation, but most lineages also contain families in which divergence is common.  Striking cases include the ~700 human C2H2 zinc finger proteins, whose expansion appears to be driven by retroelements, which are highly enriched among genomic sequences bound in vivo (Najafabadi, Mnaimneh, Schmitges et al., Nature Biotechnology 2015).  In C. elegans, the nuclear hormone receptors have undergone a similar expansion and diversification in binding sites (Narasimhan, Lambert et al., eLife 2015).  We anticipate that global analysis of binding sites, sequence preferences, protein partners, and the impact of genetic perturbations on transcript levels will provide insight into the function and origin of newly-evolved proteins.</Text>
+							<div css={{ textAlign: 'left' }}>
+								<Text h2 css={{ color: '#e01f00' }} align='left'>About Us</Text>
+								<Text h4> We are a research group located at the Donnelly Centre, University of Toronto. Our primary focus is to understand how cells recognize and act upon DNA and RNA sequence. Major projects in the lab typically involve both wet and dry lab aspects, and many are collaborative, because it often becomes essential to engage experts in diverse and unexpected fields. <br /></Text>
+							</div>
+							<Spacer y={1} />
+							<div css={{ textAlign: 'left' }}>
+								<Text h2 css={{ color: '#ffb700' }} align='left'>Our Research</Text>
+								<Text css={{ fontSize: '1.1rem' }}>Interpretation of nucleic acid sequence is a fundamental problem in molecular biology.
+									It is now clear that only a small minority of most genomes is protein coding.
+									In contrast, the number and variety of apparent regulatory sequences continues to grow - in human, eclipsing the number of protein coding genes by orders of magnitude.
+									Decoding how regulatory sequences are recognized and interpreted by cells is fundamental to dissecting gene expression mechanisms,
+									interpreting the significance of sequence variants, and understanding the function and evolution of genomes. Despite a wealth of sequencing and expression data, however,
+									it remains surprisingly difficult to predict gene expression patterns on the basis of primary sequence, even in “simple” genomes such as that of yeast.
+									This shortcoming suggest that there are large gaps in available data, and/or that our conceptual models of how transcriptional and post-transcriptional regulation work are
+									too simplistic. <br /><br />
+
+									This vexing problem - how do cells recognize DNA and RNA sequence, and act upon it - represents one of the grand challenges of our era, and our goal is to solve it in the general case. <br /><br />
+
+									We know that the problem can be solved, because cellular biochemical mechanisms can easily solve it:
+									foreign DNA introduced into cells is typically regulated in the same way as equivalent native DNA.
+									In living cells, many regulatory factors and processes act in concert, and we therefore believe that a complete index of protein-DNA and protein-RNA sequence motifs
+									will likely be necessary for this task.  In addition, many biological complexities will need to be incorporated into computational analyses.
+									For example, DNA and RNA binding proteins interact with one another, and also provide an interface that selectively recruits other enzymes and structural components,
+									thus determining the “epigenetic landscape”.  Uncovering the linkages between these layers of regulation is critical to a mechanistic understanding of the functions of
+									individual components as well as the entire system.
+								</Text>
+
+							</div>
 						</div>
 						<div className={styles.column}>
 							<div css={{ textAlign: 'left' }}>
@@ -133,14 +143,21 @@ export default function Home() {
 								<Container alignContent='right'>
 									<Grid.Container gap={2} align='center' justify='center'>
 										<Grid xs={12} sm={12} md={10} lg={10}>
-											<ResearchOverviewCard imageSrc="../images/rbp.jpg" overlayText="Comprehensive views of protein-DNA and protein-RNA recognition" css={{
-											}} title="Project 1" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nisl, eget aliquet nisl nisl eget nisl. Donec euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nisl, eget aliquet nisl nisl eget nisl." />
+											<ResearchOverviewCard
+												imageSrc="../images/rbp.jpg"
+												overlayText="Comprehensive views of protein-DNA and protein-RNA recognition" />
 										</Grid>
 										<Grid xs={12} sm={12} md={10} lg={10}>
-											<ResearchOverviewCard overlayText="Dissecting the evolution of gene regulation mechanisms" imageSrc="../images/zf.png" title="Project 2" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nisl, eget aliquet nisl nisl eget nisl. Donec euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nisl, eget aliquet nisl nisl eget nisl." />
+											<ResearchOverviewCard
+												overlayText="Dissecting the evolution of gene regulation mechanisms"
+												imageSrc="../images/zf.png"
+											/>
 										</Grid>
 										<Grid xs={12} sm={12} md={10} lg={10}>
-											<ResearchOverviewCard imageSrc="../images/unifiedmodel.jpg" overlayText="Improving sequence-based models of gene regulation" title="Project 3" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nisl, eget aliquet nisl nisl eget nisl. Donec euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nisl, eget aliquet nisl nisl eget nisl." />
+											<ResearchOverviewCard imageSrc="../images/unifiedmodel.jpg"
+												overlayText="Improving sequence-based models of gene regulation"
+												href="/projects"
+											/>
 										</Grid>
 									</Grid.Container>
 								</Container>
@@ -156,6 +173,8 @@ export default function Home() {
 		</Box>
 	)
 }
+
+export default Home
 
 
 

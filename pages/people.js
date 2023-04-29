@@ -36,19 +36,26 @@ const People = () => (
             <Container>
                 <Spacer y={1} />
                 <Row gap={0}>
-                    <Col xs={12} md={5}>
+                    <Col xs={12} sm={6} md={5} lg={4} xl={3}>
                         <Image src='../images/Tim.png' objectFit='fill' />
                     </Col>
                     <Spacer x={1.5} />
                     <Col xs={12} md={7}>
                         <h1> Tim Hughes </h1>
-                        <Text size={17.4} color="black" css={{ m: 0 }}>
-                        </Text>
                         <Spacer y={1} />
-                        <Text size={17.4} color="black" css={{ m: 0 }} className='responsiveText.textResponsive'>
-                            How Do Cells See The Genome?
-                            Interpretation of nucleic acid sequence is a fundamental problem in molecular biology.  It is now clear that only a small minority of most genomes is protein coding. In contrast, the number and variety of apparent regulatory sequences continues to grow - in human, eclipsing the number of protein coding genes by orders of magnitude. Decoding how regulatory sequences are recognized and interpreted by cells is fundamental to dissecting gene expression mechanisms, interpreting the significance of sequence variants, and understanding the function and evolution of genomes. Despite a wealth of sequencing and expression data, however, it remains surprisingly difficult to predict gene expression patterns on the basis of primary sequence, even in “simple” genomes such as that of yeast.  This shortcoming suggest that there are large gaps in available data, and/or that our conceptual models of how transcriptional and post-transcriptional regulation work are too simplistic.
+                        <Text size={18} color="black" css={{ m: 0, textSize: '1.1rem' }} className='responsiveText.textResponsive'>
+                            Timothy Hughes is a molecular geneticist studying how proteins recognize DNA sequences and work together to regulate genes, in humans and other organisms. <br /><br />
+                            Often described as a “blueprint,” the genome is in fact a highly encoded instruction set – there is no simple mapping between the genome and the organism, and this shortcoming means that the function of the vast majority of the human genome is incomprehensible to us. As a first step, Hughes is decoding the sequences that are recognized by the thousands of proteins that bind DNA and RNA and regulate gene activity, and using these data to build computational models of global gene regulation. A long-term goal of his research is to enable meaningful interpretation of human sequence variation and mutations, and to enable targeted modulation of cellular processes that are altered in disease.
+                        </Text><br />
+                        <Text size={18} color="black" css={{ m: 0, textSize: '1.1rem', fontWeight: 'bold' }} className='responsiveText.textResponsive'>
+                            Qualifications:</Text>
+                        <Text size={18} color="black" css={{ m: 0, textSize: '1.1rem' }} className='responsiveText.textResponsive'> Baylor College of Medicine, Houston, TX, U.S., PhD in Cellular and Molecular Biology, 1998. <br />
+                            University of Iowa, Iowa City, IA, U.S., BSc in Electrical Engineering, 1993.<br />
+                            University of Iowa, Iowa City, IA, U.S., Bachelor of Music in String Bass Performance, 1991. <br />
+
                         </Text>
+
+
                     </Col>
                 </Row>
                 <Spacer y={1} />
@@ -63,41 +70,41 @@ const People = () => (
                         <PersonCard Name={'Ally Yang'} Img={'../images/Ally.jpg'} Role={"Lab Staff"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Rozita Razavi'} Img={'../images/Rozy.jpg'} Role={"Lab Staff"}/>
+                        <PersonCard Name={'Rozita Razavi'} Img={'../images/Rozy.jpg'} Role={"Lab Staff"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Mihai Albu'} Img={'../images/Mihai.png'} Role={"Lab Staff"}/>
+                        <PersonCard Name={'Mihai Albu'} Img={'../images/Mihai.png'} Role={"Lab Staff"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Hong Zheng'} Img={'../images/Hong_resize.jpg'} Role={"Lab Staff"}/>
+                        <PersonCard Name={'Hong Zheng'} Img={'../images/Hong_resize.jpg'} Role={"Lab Staff"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Alex Brezhalov'} Img={'../images/Sasha.jpeg'} Role={"Postdoc"}/>
+                        <PersonCard Name={'Alex Brezhalov'} Img={'../images/Sasha.jpeg'} Role={"Postdoc"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Arttu Jolma'} Img={'../images/Arttu.png'} Role={"Postdoc"}/>
+                        <PersonCard Name={'Arttu Jolma'} Img={'../images/Arttu.png'} Role={"Postdoc"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Kaitlin Laverty'} Img={'../images/Kaitlin.png'} Role={"PhD Student"}/>
+                        <PersonCard Name={'Kaitlin Laverty'} Img={'../images/Kaitlin.png'} Role={"PhD Student"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
                         <PersonCard Name={'Isaac Yellan'} Img={'../images/Isaac.jpg'} Role={"PhD Student"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Sara Pour'} Img={'../images/Sara.png'} Role={"PhD Student"}/>
+                        <PersonCard Name={'Sara Pour'} Img={'../images/Sara.png'} Role={"PhD Student"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Shamira Tabrejee'} Img={'../images/Shamira.jpeg'} Role={"PhD Student"}/>
+                        <PersonCard Name={'Shamira Tabrejee'} Img={'../images/Shamira.jpeg'} Role={"PhD Student"} />
                     </Grid>
                     <Grid xs={12} sm={6} md={5} lg={4} xl={3}>
-                        <PersonCard Name={'Ali Fathi'} Img={'../images/ali.jpg'} Role={"PhD Student"}/>
+                        <PersonCard Name={'Ali Fathi'} Img={'../images/ali.jpg'} Role={"PhD Student"} />
                     </Grid>
                 </Grid.Container>
             </Container>
         </div >
         <Footer />
 
-    </Box>
+    </Box >
 );
 
 export default People;

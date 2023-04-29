@@ -1,5 +1,5 @@
 import { NextUIProvider } from '@nextui-org/react';
-import theme from './theme';
+import theme from '../components/theme';
 import React from 'react';
 
 
